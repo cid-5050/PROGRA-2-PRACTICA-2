@@ -4,4 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        Fila.cpp \
         main.cpp
+
+HEADERS += \
+    Fila.h
