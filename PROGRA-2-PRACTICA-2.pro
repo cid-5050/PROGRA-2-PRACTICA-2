@@ -8,4 +8,6 @@ SOURCES += \
         main.cpp
 
 HEADERS += \
-    Fila.h
+    Elemento.h \
+    Fila.h \
+    Persona.h
