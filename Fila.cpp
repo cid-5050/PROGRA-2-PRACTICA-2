@@ -7,12 +7,12 @@ int Fila::size() const {
     if (Fila::empty())
         return 0;
 
-    while (elemAux->next != nullptr) {
+    while (elemAux != nullptr) {
         elemAux = elemAux->next;
         cont++;
     }
 
-    return ++cont;
+    return cont;
 }
 
 bool Fila::empty() const {
@@ -36,7 +36,7 @@ Persona Fila::getBack() const {
 bool Fila::PersonPresent(const Persona& dato) {
     std::shared_ptr<Elemento> elemAux{_ultimo};
 
-    while (elemAux->next != nullptr) {
+    while (elemAux != nullptr) {
         if (elemAux->dato == dato)
             return true;
         elemAux = elemAux->next;
