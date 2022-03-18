@@ -4,13 +4,15 @@ int Fila::size() const {
     int cont{0};
     std::shared_ptr<Elemento> elemAux{_ultimo};
 
+    if (Fila::empty())
+        return 0;
 
     while (elemAux->next != nullptr) {
         elemAux = elemAux->next;
         cont++;
     }
 
-    return cont;
+    return ++cont;
 }
 
 bool Fila::empty() const {
@@ -44,5 +46,9 @@ bool Fila::PersonPresent(const Persona& dato) {
 }
 
 void Fila::push(const Persona& dato) {
-    _ultimo = std::make_shared<Elemento>(Elemento(dato));
+    Elemento elementoAux(dato);
+    elementoAux.next = _ultimo;
+
+    _ultimo = std::make_shared<Elemento>(elementoAux);
+
 }
